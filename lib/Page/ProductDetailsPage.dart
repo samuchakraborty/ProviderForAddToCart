@@ -22,7 +22,7 @@ class ProductDetailsPage extends StatelessWidget {
         //       child: Text(store.basket.length.toString())),
         // ],
 
-           actions: [
+        actions: [
           Badge(
             position: BadgePosition.topEnd(top: 0, end: 3),
             badgeContent: Text(
@@ -56,30 +56,38 @@ class ProductDetailsPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Container(
-              width: 150,
-              decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                      icon: Icon(Icons.add),
-                      onPressed: () {
-                        store.addOneItemtoBasket(store.activeProducts);
-                      }),
-                  Container(
-                    decoration:
-                        BoxDecoration(border: Border.all(color: Colors.amber)),
-                    child: Text(store.activeProducts.qty.toString()),
-                  ),
-                  IconButton(
-                      icon: Icon(Icons.remove),
-                      onPressed: () {
-                        store.removeOneItemtoBasket(store.activeProducts);
-                      }),
-                ],
-              ),
-            ),
+            // Container(
+            //   width: 150,
+            //   decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            //       IconButton(
+            //           icon: Icon(Icons.add),
+            //           onPressed: () {
+            //             store.addOneItemtoBasket(store.activeProducts);
+            //           }),
+            //       Container(
+            //         decoration:
+            //             BoxDecoration(border: Border.all(color: Colors.amber)),
+            //         child: Text(store.activeProducts.qty.toString()),
+            //       ),
+            //       IconButton(
+            //           icon: Icon(Icons.remove),
+            //           onPressed: () {
+            //             store.removeOneItemtoBasket(store.activeProducts);
+            //           }),
+            //     ],
+            //   ),
+            // ),
+
+            FlatButton(
+              onPressed: () {
+                store.addOneItemtoBasket(store.activeProducts);
+              },
+              child: Text("Add to Cart"),
+              color: Colors.pink,
+            )
           ],
         ),
       ),

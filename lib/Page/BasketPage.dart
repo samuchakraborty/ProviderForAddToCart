@@ -49,6 +49,7 @@ class BasketPage extends StatelessWidget {
       body: ListView.builder(
           itemCount: store.basket.length,
           itemBuilder: (context, i) {
+           
             return Row(
               children: [
                 Expanded(
@@ -67,7 +68,7 @@ class BasketPage extends StatelessWidget {
                 Expanded(
                   flex: 3,
                   child: Container(
-                    width: 150,
+                    width: 30,
                     decoration:
                         BoxDecoration(border: Border.all(color: Colors.blue)),
                     child: Row(
