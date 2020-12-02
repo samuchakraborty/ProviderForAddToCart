@@ -60,7 +60,9 @@ class BasketPage extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                    flex: 2, child: Text(store.basket[i].price.toString())),
+                    flex: 2,
+                    child: Text((store.basket[i].price * store.basket[i].qty)
+                        .toString())),
                 Expanded(flex: 2, child: Text(store.basket[i].name)),
                 Expanded(
                   flex: 3,

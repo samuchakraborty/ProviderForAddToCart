@@ -54,7 +54,6 @@ class MyStore extends ChangeNotifier {
 
     if (found != null) {
       found.qty += 1;
-      
     } else {
       basketItem.add(p);
     }
@@ -83,17 +82,4 @@ class MyStore extends ChangeNotifier {
     notifyListeners();
     return total;
   }
-  // getBasketQtyonly(Product p) {
-  //   int total = 0;
-  //   Product found = basketItem.firstWhere((element) => element.id == p.id,
-  //       orElse: () => null);
-
-  //   if (found != null) {
-  //     found.qty += 1;
-  //   } else {
-  //     basketItem.add(p);
-  //   }
-  //   notifyListeners();
-  //   return total;
-  // }
 }
