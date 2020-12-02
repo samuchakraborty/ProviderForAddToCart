@@ -6,6 +6,7 @@ class MyStore extends ChangeNotifier {
   List<Product> basketItem = [];
   // ignore: avoid_init_to_null
   Product activeProductItem = null;
+  double totalCartValue = 0;
 
   MyStore() {
     //set up data
@@ -15,24 +16,24 @@ class MyStore extends ChangeNotifier {
           name: "DSlR",
           image: "https://picsum.photos/250?image=9",
           qty: 1,
-          price: 100),
+          price: 10000),
       Product(
           id: 2,
           qty: 1,
           image: "https://picsum.photos/250?image=8",
-          price: 100,
+          price: 30000,
           name: "DSlR"),
       Product(
           id: 3,
           qty: 1,
           image: "https://picsum.photos/250?image=7",
-          price: 100,
+          price: 5600,
           name: "DSlR"),
       Product(
           id: 4,
           qty: 1,
           image: "https://picsum.photos/250?image=10",
-          price: 100,
+          price: 1900,
           name: "DSlR"),
     ];
     //send notification to provider
@@ -56,6 +57,7 @@ class MyStore extends ChangeNotifier {
       found.qty += 1;
     } else {
       basketItem.add(p);
+      calculateTotal();
     }
     notifyListeners();
   } //ef
@@ -81,5 +83,39 @@ class MyStore extends ChangeNotifier {
     }
     notifyListeners();
     return total;
+  }
+
+  // void toggleDone() {
+  //   activeProductItem.qty++;
+  // }
+
+  // void decreaseDown() {
+  //   activeProductItem.qty == 0 ? 0 : activeProductItem.qty--;
+  // }
+
+  // void updateTask(Product task) {
+  //   task.toggleDone();
+  //   notifyListeners();
+  // }
+
+  // // void removeCard(Product task) {
+  // //   _addNewData.remove(task);
+  // //   notifyListeners();
+  // // }
+
+  // void decrease(Product task) {
+  //   if (task.qty == 1) {
+  //     // removeCard(task);
+  //     basketItem.remove(task);
+  //   }
+  //   task.decreaseDown();
+  //   notifyListeners();
+  // }
+
+  void calculateTotal() {
+    totalCartValue = 0;
+    basket.forEach((f) {
+      totalCartValue += f.price * f.qty;
+    });
   }
 }

@@ -49,7 +49,6 @@ class BasketPage extends StatelessWidget {
       body: ListView.builder(
           itemCount: store.basket.length,
           itemBuilder: (context, i) {
-           
             return Row(
               children: [
                 Expanded(
@@ -64,11 +63,11 @@ class BasketPage extends StatelessWidget {
                     flex: 2,
                     child: Text((store.basket[i].price * store.basket[i].qty)
                         .toString())),
-                Expanded(flex: 2, child: Text(store.basket[i].name)),
+                Expanded(flex: 1, child: Text(store.basket[i].name)),
                 Expanded(
-                  flex: 3,
+                  flex: 4,
                   child: Container(
-                    width: 30,
+                    width: 10,
                     decoration:
                         BoxDecoration(border: Border.all(color: Colors.blue)),
                     child: Row(
@@ -93,6 +92,15 @@ class BasketPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 30,
+                ),
+                // Row(
+                //   children: [
+                //     Text("Total"),
+                //     Text(store.basket[i].qty.toString()),
+                //   ],
+                // ),
               ],
             );
           }),

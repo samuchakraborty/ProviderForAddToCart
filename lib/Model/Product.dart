@@ -6,4 +6,14 @@ class Product {
   double price;
 
   Product({this.id, this.name, this.image, this.qty, this.price});
+
+  // void toggleDone() {
+  //   qty++;
+  // }
+
+  // void decreaseDown() {
+  //   qty == 0 ? 0 : qty--;
+  // }
+
+  //
 }
